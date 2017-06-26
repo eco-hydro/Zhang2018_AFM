@@ -47,3 +47,8 @@ trace(H1)
 %   -------------------------------------------------------------
 %   And, in their paper, the free parameters of Whittaker smoother 
 %   is 18.84 when λ=2, and it is 9.37 when λ=15.
+
+E  = speye(n);
+D  = diff(E, d);
+H  = inv(E + lambda * D' * D); 
+ed = trace(H);
